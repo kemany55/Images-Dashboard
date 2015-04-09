@@ -1,6 +1,6 @@
 git init 
 git add .
-git commit -am"message"
+git commit -am "message"
 
 
 #after devise gem install
@@ -13,7 +13,18 @@ $ rails c
 @pin.user = @user
 @pin
 @pin.save
+//you can find pin by att
+@pin = Pin.find(3)
 
 if we created another pin now there'll be an error 
 because this pin doesnt have a user att
+so we replace "Pin.new" in the pins controller in actions new and create by "current_user.pins.build"
+
+so time for some styling aka bootstrap
+go to documentation 
+in application.css.scss:
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
 
